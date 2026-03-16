@@ -97,20 +97,20 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 border-t border-white/10 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-sm text-white/50">
+            <p className="text-sm text-white/70">
               &copy; {new Date().getFullYear()} Shield Peak Roofing. All rights
               reserved.
             </p>
             <div className="flex gap-6">
               <a
                 href="#"
-                className="text-sm text-white/50 hover:text-white/70"
+                className="text-sm text-white/70 hover:text-white"
               >
                 Privacy Policy
               </a>
               <a
                 href="#"
-                className="text-sm text-white/50 hover:text-white/70"
+                className="text-sm text-white/70 hover:text-white"
               >
                 Terms of Service
               </a>

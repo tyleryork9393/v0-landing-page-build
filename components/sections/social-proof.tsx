@@ -75,8 +75,8 @@ export function SocialProof() {
             {/* Before (Background) */}
             <div className="absolute inset-0 flex items-center justify-center bg-slate-300">
               <div className="text-center">
-                <p className="text-lg font-semibold text-slate-600">Before</p>
-                <p className="text-sm text-slate-500">Storm Damaged Roof</p>
+                <p className="text-lg font-semibold text-slate-800">Before</p>
+                <p className="text-sm text-slate-700">Storm Damaged Roof</p>
               </div>
             </div>
 

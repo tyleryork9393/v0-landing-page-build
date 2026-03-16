@@ -103,7 +103,7 @@ export function Hero({ onOpenModal }: HeroProps) {
                 <p className="text-sm font-medium text-muted-foreground">
                   Hero Image
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground/70">
+                <p className="mt-1 text-xs text-muted-foreground">
                   Professional roofing team at work
                 </p>
               </div>
