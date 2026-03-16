@@ -6,7 +6,7 @@
 :root {
   /* Shield Peak Brand Colors */
   --navy: #1e3a8a;
-  --orange: #f97316;
+  --gold: #d97706;
   --slate: #f1f5f9;
   
   /* Semantic tokens mapped to brand */
@@ -22,7 +22,7 @@
   --secondary-foreground: #1e3a8a;
   --muted: #f1f5f9;
   --muted-foreground: #475569;
-  --accent: #f97316;
+  --accent: #d97706;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
@@ -60,7 +60,7 @@
   --radius-xl: calc(var(--radius) + 4px);
   /* Brand colors as Tailwind utilities */
   --color-navy: var(--navy);
-  --color-orange: var(--orange);
+  --color-gold: var(--gold);
   --color-slate-bg: var(--slate);
 }
 
