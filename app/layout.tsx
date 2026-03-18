@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import { Geist } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geist = Geist({ subsets: ['latin'] })
 
@@ -52,7 +51,6 @@ export default function RootLayout({
       <body className={`${geist.className} antialiased`}>
         {children}
         <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   )
