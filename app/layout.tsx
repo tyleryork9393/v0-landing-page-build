@@ -52,6 +52,7 @@ export default function RootLayout({
       <body className={`${geist.className} antialiased`}>
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
