@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const stats = [
   { value: '500+', label: 'Roofs Restored' },
@@ -65,53 +66,52 @@ export function SocialProof() {
         </div>
 
         {/* Before/After Slider */}
-        <div className="mt-12">
+        <div className="mt-16">
           <div
             ref={containerRef}
-            className="relative mx-auto aspect-[16/9] max-w-4xl cursor-ew-resize overflow-hidden rounded-2xl border border-border"
+            className="group relative mx-auto aspect-[16/9] max-w-5xl cursor-ew-resize overflow-hidden rounded-[2.5rem] border-8 border-white shadow-2xl shadow-navy/20"
             onMouseDown={() => (isDragging.current = true)}
             onTouchStart={() => (isDragging.current = true)}
           >
             {/* Before (Background) */}
-            <div className="absolute inset-0 flex items-center justify-center bg-slate-300">
-              <div className="text-center">
-                <p className="text-lg font-semibold text-slate-800">Before</p>
-                <p className="text-sm text-slate-700">Storm Damaged Roof</p>
+            <div className="absolute inset-0">
+              <img
+                src="/roof-before.png"
+                alt="Before Restoration"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-red-900/5 pointer-events-none" />
+              <div className="absolute top-6 left-6 rounded-full bg-black/50 px-6 py-2 backdrop-blur-md">
+                <p className="text-sm font-black uppercase tracking-widest text-white">Before (Storm Damaged)</p>
               </div>
             </div>
 
             {/* After (Foreground, clipped) */}
             <div
-              className="absolute inset-0 flex items-center justify-center bg-primary/10"
+              className="absolute inset-0 overflow-hidden"
               style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
             >
-              <div className="text-center">
-                <p className="text-lg font-semibold text-primary">After</p>
-                <p className="text-sm text-muted-foreground">
-                  Fully Restored Roof
-                </p>
+              <img
+                src="/roof-after.png"
+                alt="After Restoration"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-blue-900/5 pointer-events-none" />
+              <div className="absolute top-6 left-6 whitespace-nowrap rounded-full bg-accent px-6 py-2 shadow-lg">
+                <p className="text-sm font-black uppercase tracking-widest text-white">After (Fully Restored)</p>
               </div>
             </div>
 
             {/* Slider Handle */}
             <div
-              className="absolute top-0 bottom-0 w-1 bg-white shadow-lg"
-              style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
+              className="absolute top-0 bottom-0 w-1.5 bg-white shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-transform duration-100 ease-out group-hover:scale-x-150"
+              style={{ left: `${sliderPosition}%` }}
             >
-              <div className="absolute top-1/2 left-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-accent shadow-lg">
-                <svg
-                  className="h-5 w-5 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 9l4-4 4 4m0 6l-4 4-4-4"
-                  />
-                </svg>
+              <div className="absolute top-1/2 left-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white bg-accent shadow-2xl transition-transform group-hover:scale-110">
+                <div className="flex gap-1">
+                  <ChevronLeft className="h-6 w-6 text-white" />
+                  <ChevronRight className="h-6 w-6 text-white" />
+                </div>
               </div>
             </div>
           </div>

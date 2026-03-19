@@ -70,5 +70,51 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "cv11", "ss01";
   }
+}
+
+@layer utilities {
+  .bg-gradient-subtle {
+    background: linear-gradient(135deg, var(--background) 0%, color-mix(in srgb, var(--background), var(--secondary)) 100%);
+  }
+
+  .bg-gradient-premium {
+    background: radial-gradient(circle at top left, var(--background) 0%, color-mix(in srgb, var(--background), var(--secondary)) 100%);
+  }
+
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .dark .glass {
+    @apply bg-black/20 backdrop-blur-md border border-white/10;
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px -5px rgba(217, 119, 6, 0.3);
+  }
+
+  .glow-navy {
+    box-shadow: 0 0 20px -5px rgba(30, 58, 138, 0.2);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }

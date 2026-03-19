@@ -32,28 +32,30 @@ export function Header({ onOpenModal }: HeaderProps) {
   return (
     <header 
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
         isScrolled 
-          ? 'border-b border-border/50 bg-white/90 backdrop-blur-md shadow-sm' 
+          ? 'border-b border-border/40 bg-white/80 backdrop-blur-xl shadow-lg ring-1 ring-black/5' 
           : 'bg-transparent'
       )}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <Shield className="h-8 w-8 text-primary" />
-          <span className="text-xl font-bold tracking-tight text-primary">
-            Shield Peak
+        <a href="#" className="flex items-center gap-2 group">
+          <div className="rounded-xl bg-primary p-2 transition-transform group-hover:scale-110">
+            <Shield className="h-6 w-6 text-white" />
+          </div>
+          <span className="text-2xl font-black tracking-tighter text-primary">
+            SHIELD PEAK
           </span>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-10 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              className="text-sm font-bold uppercase tracking-widest text-muted-foreground/80 transition-all hover:text-primary hover:tracking-[0.15em]"
             >
               {link.label}
             </a>
@@ -64,7 +66,7 @@ export function Header({ onOpenModal }: HeaderProps) {
         <div className="hidden md:block">
           <Button
             onClick={onOpenModal}
-            className="bg-accent text-accent-foreground hover:bg-accent/90"
+            className="bg-accent px-6 py-5 font-bold text-accent-foreground hover:bg-accent/90 transition-all hover:scale-105 active:scale-95 shadow-md shadow-accent/10"
           >
             Get Free Inspection
           </Button>

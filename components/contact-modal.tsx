@@ -67,19 +67,19 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
           </div>
         ) : (
           <>
-            <DialogHeader>
-              <DialogTitle className="text-2xl">
+            <DialogHeader className="pb-4 border-b border-slate-100">
+              <DialogTitle className="text-3xl font-extrabold text-primary">
                 Get Your Free Inspection
               </DialogTitle>
-              <DialogDescription>
+              <DialogDescription className="text-pretty text-base">
                 Fill out the form below and our team will contact you within 24
                 hours.
               </DialogDescription>
             </DialogHeader>
 
-            <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-4">
+            <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-5">
               <div className="flex flex-col gap-2">
-                <Label htmlFor="name">Full Name *</Label>
+                <Label htmlFor="name" className="text-sm font-bold text-primary/80">Full Name *</Label>
                 <Input
                   id="name"
                   name="name"
@@ -90,7 +90,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
               </div>
 
               <div className="flex flex-col gap-2">
-                <Label htmlFor="phone">Phone Number *</Label>
+                <Label htmlFor="phone" className="text-sm font-bold text-primary/80">Phone Number *</Label>
                 <Input
                   id="phone"
                   name="phone"
@@ -102,7 +102,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
               </div>
 
               <div className="flex flex-col gap-2">
-                <Label htmlFor="email">Email Address *</Label>
+                <Label htmlFor="email" className="text-sm font-bold text-primary/80">Email Address *</Label>
                 <Input
                   id="email"
                   name="email"
@@ -114,7 +114,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
               </div>
 
               <div className="flex flex-col gap-2">
-                <Label htmlFor="address">Property Address</Label>
+                <Label htmlFor="address" className="text-sm font-bold text-primary/80">Property Address</Label>
                 <Input
                   id="address"
                   name="address"
@@ -124,12 +124,11 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
               </div>
 
               <div className="flex flex-col gap-2">
-                <Label htmlFor="message">Additional Notes</Label>
+                <Label htmlFor="message" className="text-sm font-bold text-primary/80">Additional Notes</Label>
                 <Textarea
                   id="message"
                   name="message"
                   placeholder="Tell us about your roofing needs..."
-                  rows={3}
                   disabled={isSubmitting}
                 />
               </div>
@@ -137,11 +136,11 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="mt-2 w-full bg-accent text-accent-foreground hover:bg-accent/90"
+                className="mt-4 w-full bg-accent py-7 text-lg font-bold text-accent-foreground hover:bg-accent/90 transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-accent/20"
               >
                 {isSubmitting ? (
                   <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                     Submitting...
                   </>
                 ) : (

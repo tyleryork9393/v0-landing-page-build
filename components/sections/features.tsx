@@ -48,14 +48,14 @@ const services = [
 
 export function Features() {
   return (
-    <section id="services" className="bg-secondary py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+    <section id="services" className="bg-gradient-subtle py-20 md:py-28 relative overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header content unchanged */}
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-balance text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             Complete Roofing Solutions
           </h2>
-          <p className="mt-4 text-pretty text-lg text-muted-foreground">
+          <p className="mt-4 text-pretty text-lg text-muted-foreground leading-relaxed">
             From emergency repairs to full replacements, we provide comprehensive
             roofing services with unmatched expertise.
           </p>
@@ -66,7 +66,7 @@ export function Features() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="group rounded-xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="group rounded-2xl border border-border/50 bg-background p-8 transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl hover:shadow-navy/10 hover:border-accent/30 hover:glow-navy"
             >
               <div className="mb-4 inline-flex rounded-lg bg-accent/10 p-3">
                 <service.icon className="h-6 w-6 text-accent" />
