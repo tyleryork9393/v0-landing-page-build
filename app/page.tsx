@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Header } from '@/components/header'
 import { ContactModal } from '@/components/contact-modal'
 import { Hero } from '@/components/sections/hero'
+import { Process } from '@/components/sections/process'
 import { TrustBar } from '@/components/sections/trust-bar'
 import { Features } from '@/components/sections/features'
 import { SocialProof } from '@/components/sections/social-proof'
@@ -22,6 +23,7 @@ export default function Home() {
       <main>
         <Hero onOpenModal={openModal} />
         <TrustBar />
+        <Process />
         <Features />
         <SocialProof />
         <Testimonials />

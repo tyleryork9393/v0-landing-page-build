@@ -40,31 +40,38 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="bg-secondary py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="bg-gradient-subtle py-24 md:py-32 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none -scale-x-100">
+        <svg fill="none" viewBox="0 0 400 400" className="h-full w-full stroke-primary">
+          <circle cx="200" cy="200" r="100" />
+          <circle cx="200" cy="200" r="150" />
+          <circle cx="200" cy="200" r="200" />
+        </svg>
+      </div>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-balance text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+          <h2 className="text-balance text-4xl font-extrabold tracking-tight text-primary sm:text-5xl">
             Common Questions
           </h2>
-          <p className="mt-4 text-pretty text-lg text-muted-foreground">
-            Find answers to frequently asked questions about our services.
+          <p className="mt-6 text-pretty text-xl text-muted-foreground leading-relaxed">
+            Everything you need to know about our process, insurance, and quality standards.
           </p>
         </div>
 
         {/* Accordion */}
-        <div className="mx-auto mt-12 max-w-3xl">
-          <Accordion type="single" collapsible className="w-full">
+        <div className="mx-auto mt-16 max-w-4xl">
+          <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border-border bg-background px-6 first:rounded-t-xl last:rounded-b-xl"
+                className="glass rounded-2xl border border-border/40 bg-white/60 px-2 shadow-sm transition-all duration-300 data-[state=open]:bg-white/90 data-[state=open]:shadow-xl data-[state=open]:shadow-navy/5 data-[state=open]:border-accent/30"
               >
-                <AccordionTrigger className="text-left text-base font-medium text-primary hover:no-underline">
-                  {faq.question}
+                <AccordionTrigger className="w-full text-left text-lg font-bold text-primary hover:no-underline px-6 py-6 transition-all group">
+                  <span className="flex-1 transition-transform group-hover:translate-x-1">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+                <AccordionContent className="px-6 pb-6 text-base leading-relaxed text-muted-foreground/90 font-medium">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
